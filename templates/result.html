@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Результаты прогноза</h1>
+    <img src="{{ recent_plot_url }}" alt="Прогноз на 6 месяцев">
+    <img src="{{ complete_plot_url }}" alt="Весь период и доверительный интервал">
+    <a href="static/forecast.xlsx" download>Загрузить прогноз</a>
+    <br>
+    <a href="{{ url_for('index') }}">Вернуться на главную</a>
+</div>
+{% endblock %}

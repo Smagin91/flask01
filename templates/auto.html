@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Парсинг витрины данных Росстата
+{% endblock %}
+{% block content %}
+    <h3>Добро пожаловать на страницу загрузки данных с Росстата, процесс занимает примено 5 минут, после нажатия на кнопку появится ссылка.</h3>
+    <form action="/auto" method="post">
+        <button type="submit">Парсинг Росстата</button>
+    </form>
+    {% if parsed %}
+    <form action="/download_data" method="get">
+        <input type="hidden" name="file_path" value="{{ file_path }}">
+        <button type="submit">Скачать данные</button>
+    </form>
+    {% endif %}
+{% endblock %}

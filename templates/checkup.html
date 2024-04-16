@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Проверка
+{% endblock %}
+
+{% block content %}
+
+<h3>Проверка статуса сервера Росстата</h3>
+    <form action="/checkup">
+        <input type="submit" value="Проверить статус сервера Росстата">
+    </form>
+    <p>Статус сервера: {{ rosstat_status }}</p>
+
+{% endblock %}
